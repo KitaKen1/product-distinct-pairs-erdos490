@@ -12,6 +12,9 @@ The values are:
 210, 220, 231, 231, 242
 ```
 
+A visual dashboard with one displayed witness for each `N` is available here:
+<https://kitaken1.github.io/product-distinct-pairs-erdos490/>
+
 ## Problem setting and Small Example
 
 ### Problem setting
@@ -111,9 +114,12 @@ Thus exactness reduces to six fixed-size searches.
 
 ## Visual check
 
-For a visual example, open the GitHub Pages dashboard in `index.html`.  It shows
-one selectable witness for each `N = 1,...,35`, with the selected pair displayed
-as two sets and as a product grid.  The full list of displayed witnesses is in
+The GitHub Pages dashboard is available at
+<https://kitaken1.github.io/product-distinct-pairs-erdos490/>.
+
+It shows one selectable witness for each `N = 1,...,35`, with the selected pair
+displayed as two sets and as a product grid.  In this repository, the dashboard
+source is `index.html`, and the full list of displayed witnesses is in
 `assets/table_n35.csv`.
 
 ## Reproducing the checks
