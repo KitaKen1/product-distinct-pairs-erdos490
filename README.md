@@ -112,6 +112,35 @@ The minimal size `(|A|, |B|)` pairs are:
 
 Thus exactness reduces to six fixed-size searches.
 
+## Lean sanity checks
+
+Small self-contained Lean4Web files are included in `lean4web/`.
+
+They are intended as independent sanity checks, not as a full formal
+certification of the complete `N <= 35` table.  The full `N <= 35`
+verification is computationally too large for these Lean4Web checks in this
+direct style; the main verification is performed by the C++ programs in `src/`.
+
+Two complementary Lean files are provided.  The C++ programs are used for the
+main `N <= 35` computation.  The Lean `N=5` file reproduces the same kind of
+upper-bound method in a tiny case, where it is easy to inspect.  The Lean
+`N=10` file presents the final conclusion in a form that is easier to inspect
+by eye.
+
+- C++-style method check, in the small case `N=5`:
+  `ProductDistinctN05CppStyleLean4Web.lean`.
+  This file reproduces the main idea of the C++ upper-bound computation in a
+  tiny case: fix `A`, build the conflict graph on possible `B`-values, and
+  check the maximum independent-set size.
+
+  [Open the N=5 check in Lean4Web](https://live.lean-lang.org/#url=https://raw.githubusercontent.com/KitaKen1/product-distinct-pairs-erdos490/main/lean4web/ProductDistinctN05CppStyleLean4Web.lean)
+- Human-readable final-statement check, in the small case `N=10`:
+  `ProductDistinctN10SixConditionLean4Web.lean`.
+  Its final theorem displays the two lower-bound checks and four upper-bound
+  checks as one six-condition statement.
+
+  [Open the N=10 check in Lean4Web](https://live.lean-lang.org/#url=https://raw.githubusercontent.com/KitaKen1/product-distinct-pairs-erdos490/main/lean4web/ProductDistinctN10SixConditionLean4Web.lean)
+
 ## Visual check
 
 The GitHub Pages dashboard is available at
@@ -171,6 +200,10 @@ src/
   prove_fixed_size.cpp             fixed-size infeasibility checker
   verify_table.py                  witness verifier
   run_minimal_bound.py             helper for minimal upper-bound checks
+
+lean4web/
+  ProductDistinctN05CppStyleLean4Web.lean
+  ProductDistinctN10SixConditionLean4Web.lean
 
 index.html                         static browser dashboard
 ```
